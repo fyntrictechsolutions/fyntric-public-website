@@ -25,7 +25,10 @@ export const solutionImages: Record<string, MediaImage> = {
     alt: "Shopper scanning a loyalty reward on her phone at a supermarket checkout",
   },
   "Order Management": { src: "/images/home/orders.webp", alt: "Warehouse staff checking orders on a tablet" },
-  "Distribution / Van Sales": { alt: "Field sales representative taking an order on a phone beside a delivery van" },
+  "Distribution / Van Sales": {
+    src: "/images/home/van-sales.webp",
+    alt: "Field sales representative confirming an order on a phone beside a delivery van",
+  },
   "Business Analytics": { src: "/images/home/analytics.webp", alt: "Business owner reading KPI dashboards on two screens" },
   "AI Business Automation": {
     src: "/images/home/ai-automation.webp",
