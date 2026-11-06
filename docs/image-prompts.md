@@ -6,7 +6,7 @@ The home page has 7 photo slots. Until a photo is added, each one shows a built-
 
 1. Generate the image using the prompt below.
 2. Export it as JPG or WebP at the size listed, and keep the file under about 400 KB.
-3. Save it in `public/images/home/` with the filename listed.
+3. Save it in `public/images/home/` with the filename listed (WebP is preferred).(WebP is preferred).
 4. In `src/content/media.ts`, set that slot's `src` (for example, `src: "/images/home/hero.jpg"`).
 
 You can also send the images in the project chat and Claude will add them.
@@ -23,7 +23,7 @@ You can also send the images in the project chat and Claude will add them.
 | Custom CRM | `crm.jpg` | 1600×1000 (16:10) | A sales manager and a colleague review a customer pipeline on a large monitor showing kanban columns and customer cards, with a coffee cup and notebook on the desk. A focused, friendly mood. |
 | Loyalty & Rewards | `loyalty.jpg` | 1600×1000 (16:10) | A smiling shopper at a modern supermarket checkout scans a loyalty QR code on their phone, and a reward notification glows on the screen. Bright aisles are softly blurred behind them. |
 | Order Management | `orders.jpg` | 1600×1000 (16:10) | A warehouse team member holds a tablet showing an order list beside neatly stacked labelled parcels and shelving. A clean, modern fulfilment centre with cool blue accent lighting. |
-| Distribution / Van Sales | `van-sales.jpg` | 1600×1000 (16:10) | A field sales representative takes an order on a smartphone beside a white delivery van outside a neighbourhood grocery store in Kerala, in golden-hour light. |
+| Distribution / Van Sales | `van-sales.jpg` | 1600×1000 (16:10) | A field sales representative in a smart polo shirt confirms an order on a smartphone beside a branded white delivery van, parked outside a modern retail store in a clean, contemporary city street. The location is neutral and could be any modern city in India, the Gulf or elsewhere; avoid landmarks and regional architecture. Morning light, crates of packaged goods being unloaded in the background. |
 | Business Analytics | `analytics.jpg` | 1600×1000 (16:10) | A business owner at a desk studies glowing KPI charts and graphs on a laptop and second monitor. Over-the-shoulder view, charts in blue and cyan, a premium minimal workspace. |
 | AI Business Automation | `ai-automation.jpg` | 1600×1000 (16:10) | An abstract yet realistic scene: a professional's hand interacts with a translucent holographic interface of connected workflow nodes and chat bubbles above a laptop, in violet and electric-blue light. Futuristic and clean, not cluttered. |
 
