@@ -1,8 +1,8 @@
 import { Hero } from "@/components/sections/home/Hero";
 import { Industries } from "@/components/sections/home/Industries";
 import { ProcessSection } from "@/components/sections/home/ProcessSection";
-import { ServicesBento } from "@/components/sections/home/ServicesBento";
-import { SolutionsScroller } from "@/components/sections/home/SolutionsScroller";
+import { ServicesExplorer } from "@/components/sections/home/ServicesExplorer";
+import { SolutionsGrid } from "@/components/sections/home/SolutionsGrid";
 import { Statement } from "@/components/sections/home/Statement";
 import { TechStack } from "@/components/sections/home/TechStack";
 import { WhyChooseUs } from "@/components/sections/home/WhyChooseUs";
@@ -18,8 +18,8 @@ export default function HomePage() {
     <>
       <Hero />
       <Statement />
-      <ServicesBento />
-      <SolutionsScroller />
+      <ServicesExplorer />
+      <SolutionsGrid />
       <WhyChooseUs />
       <ProcessSection />
       <TechStack />

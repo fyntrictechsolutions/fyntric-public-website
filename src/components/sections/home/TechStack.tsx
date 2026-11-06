@@ -3,11 +3,17 @@ import { Marquee } from "@/components/ui/Marquee";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { technologies } from "@/content/home";
 
-function TechPill({ name }: { name: string }) {
+type Technology = (typeof technologies)[number];
+
+function TechPill({ technology }: { technology: Technology }) {
   return (
-    <span className="glass flex items-center gap-3 rounded-full px-7 py-4 font-display text-xl font-medium whitespace-nowrap text-foreground sm:text-2xl">
-      <span aria-hidden className="size-2 rounded-full bg-brand-400" />
-      {name}
+    <span className="glass flex items-center gap-4 rounded-full py-3 pr-7 pl-3 font-display text-xl font-medium whitespace-nowrap text-foreground sm:text-2xl">
+      {/* A white disc keeps every brand's own colours readable in both themes. */}
+      <span className="grid size-12 place-items-center rounded-full bg-white shadow-sm ring-1 ring-ink-950/5 sm:size-14">
+        {/* eslint-disable-next-line @next/next/no-img-element -- tiny static SVGs, no optimisation needed */}
+        <img src={technology.logo} alt="" width={32} height={32} loading="lazy" className="size-7 object-contain sm:size-8" />
+      </span>
+      {technology.name}
     </span>
   );
 }
@@ -27,23 +33,23 @@ export function TechStack() {
       </Container>
       <div className="mt-16 space-y-4">
         <Marquee duration={35}>
-          {technologies.slice(0, half).map((name) => (
-            <TechPill key={name} name={name} />
+          {technologies.slice(0, half).map((technology) => (
+            <TechPill key={technology.name} technology={technology} />
           ))}
-          {technologies.slice(0, half).map((name) => (
-            <TechPill key={`${name}-repeat`} name={name} />
+          {technologies.slice(0, half).map((technology) => (
+            <TechPill key={`${technology.name}-repeat`} technology={technology} />
           ))}
         </Marquee>
         <Marquee duration={35} reverse>
-          {technologies.slice(half).map((name) => (
-            <TechPill key={name} name={name} />
+          {technologies.slice(half).map((technology) => (
+            <TechPill key={technology.name} technology={technology} />
           ))}
-          {technologies.slice(half).map((name) => (
-            <TechPill key={`${name}-repeat`} name={name} />
+          {technologies.slice(half).map((technology) => (
+            <TechPill key={`${technology.name}-repeat`} technology={technology} />
           ))}
         </Marquee>
       </div>
-      <p className="sr-only">Technologies: {technologies.join(", ")}.</p>
+      <p className="sr-only">Technologies: {technologies.map((technology) => technology.name).join(", ")}.</p>
     </section>
   );
 }

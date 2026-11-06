@@ -1,15 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { CircleCheck, Smartphone } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import logoMark from "@/assets/brand/logo-mark.png";
+import { Stage } from "@/components/sections/services/illustrations";
+import { SaasScene } from "@/components/sections/services/illustrations/SaasScene";
 import { AmbientBackground } from "@/components/ui/AmbientBackground";
 import { ButtonLink } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { MediaFrame } from "@/components/ui/MediaFrame";
+import { heroImage } from "@/content/media";
 import { homeHero } from "@/content/home";
-import { services } from "@/content/services";
 import { primaryCta } from "@/config/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -43,67 +45,50 @@ function RotatingWord({ words }: { words: string[] }) {
   );
 }
 
-/** Orbiting rings of service icons around the brand mark. Decorative. */
-function OrbitVisual() {
-  const inner = services.slice(0, 5);
-  const outer = services.slice(5);
-
+/**
+ * Hero visual: the hero photo (or, until it is added, a product dashboard illustration)
+ * with live-looking product cards floating around it. Decorative.
+ */
+function HeroVisual() {
   return (
-    <div aria-hidden className="relative mx-auto aspect-square w-full max-w-[34rem]">
-      <div className="absolute inset-[30%] animate-pulse-glow rounded-full bg-brand-500/40 blur-3xl" />
+    <div aria-hidden className="relative mx-auto w-full max-w-[36rem]">
+      <div className="absolute inset-[10%] animate-pulse-glow rounded-full bg-brand-500/40 blur-3xl" />
 
-      {/* Outer ring */}
-      <div className="absolute inset-0 animate-spin-reverse rounded-full border border-line">
-        {outer.map((service, i) => {
-          const angle = (i / outer.length) * 2 * Math.PI;
-          const Icon = service.icon;
-          return (
-            <div
-              key={service.slug}
-              className="absolute size-12"
-              style={{ left: `${50 + 50 * Math.cos(angle)}%`, top: `${50 + 50 * Math.sin(angle)}%`, translate: "-50% -50%" }}
-            >
-              <div className="glass grid size-full animate-spin-slow place-items-center rounded-2xl text-accent [animation-duration:60s]">
-                <Icon className="size-5" />
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <MediaFrame
+        image={heroImage}
+        sizes="(min-width: 1024px) 40vw, 100vw"
+        priority
+        className="aspect-[5/4] rounded-[2rem] shadow-[0_40px_80px_-30px_rgb(10_95_224_/_0.5)] ring-1 ring-white/20"
+        fallback={
+          <Stage gradient="from-brand-600 via-brand-500 to-accent-cyan" className="size-full">
+            <SaasScene />
+          </Stage>
+        }
+      />
 
-      {/* Inner ring */}
-      <div className="absolute inset-[18%] animate-spin-slow rounded-full border border-dashed border-brand-400/30">
-        {inner.map((service, i) => {
-          const angle = (i / inner.length) * 2 * Math.PI;
-          const Icon = service.icon;
-          return (
-            <div
-              key={service.slug}
-              className="absolute size-11"
-              style={{ left: `${50 + 50 * Math.cos(angle)}%`, top: `${50 + 50 * Math.sin(angle)}%`, translate: "-50% -50%" }}
-            >
-              <div className="grid size-full animate-spin-reverse place-items-center rounded-full border border-brand-400/40 bg-surface-2 text-highlight shadow-[0_0_24px_-4px] shadow-brand-500/60 [animation-duration:40s]">
-                <Icon className="size-5" />
-              </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Core */}
-      <div className="absolute inset-[36%] grid place-items-center rounded-full border border-line-strong bg-surface/80 shadow-[0_0_80px_-10px] shadow-brand-500/70 backdrop-blur">
-        <Image src={logoMark} alt="" className="w-1/2" sizes="120px" />
-      </div>
-
-      {/* Floating status chips */}
-      <div className="glass absolute top-[8%] -left-[4%] animate-float rounded-2xl px-4 py-3 text-xs shadow-2xl">
+      <div className="glass absolute top-[6%] -left-[10%] animate-float rounded-2xl px-4 py-3 text-xs shadow-2xl">
         <p className="flex items-center gap-2 font-medium text-foreground">
           <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_10px] shadow-emerald-400" /> AI agent online
         </p>
         <p className="mt-1 text-muted">Qualifying new leads…</p>
       </div>
-      <div className="glass absolute -right-[2%] bottom-[14%] animate-float rounded-2xl px-4 py-3 text-xs shadow-2xl [animation-delay:-3s]">
-        <p className="font-medium text-foreground">Deployment ✓</p>
+
+      <div className="glass absolute -bottom-[8%] -left-[6%] flex w-56 animate-float items-center gap-3 rounded-2xl p-3 shadow-2xl [animation-delay:-2s]">
+        <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-linear-to-br from-accent-violet to-fuchsia-500 text-white">
+          <Smartphone className="size-5" />
+        </span>
+        <span className="text-xs">
+          <span className="block font-semibold text-foreground">App release 2.4</span>
+          <span className="mt-1 block h-1.5 w-28 overflow-hidden rounded-full bg-tint-strong">
+            <span className="block h-full w-4/5 rounded-full bg-linear-to-r from-accent-violet to-fuchsia-500" />
+          </span>
+        </span>
+      </div>
+
+      <div className="glass absolute -right-[6%] bottom-[18%] animate-float rounded-2xl px-4 py-3 text-xs shadow-2xl [animation-delay:-4s]">
+        <p className="flex items-center gap-2 font-medium text-foreground">
+          <CircleCheck className="size-4 text-emerald-500" /> Deployment complete
+        </p>
         <div className="mt-2 h-1.5 w-32 overflow-hidden rounded-full bg-tint-strong">
           <div className="h-full w-full rounded-full bg-linear-to-r from-brand-500 to-accent-cyan" />
         </div>
@@ -118,8 +103,8 @@ export function Hero() {
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const contentY = useTransform(scrollYProgress, [0, 1], [0, 160]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-  const visualScale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
-  const visualRotate = useTransform(scrollYProgress, [0, 1], [0, 25]);
+  const visualScale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const visualY = useTransform(scrollYProgress, [0, 1], [0, -60]);
 
   const words = homeHero.heading.split(" ");
 
@@ -190,10 +175,10 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease }}
-          style={reduceMotion ? undefined : { scale: visualScale, rotate: visualRotate }}
-          className="hidden px-6 lg:block"
+          style={reduceMotion ? undefined : { scale: visualScale, y: visualY }}
+          className="px-4 sm:px-10 lg:px-6"
         >
-          <OrbitVisual />
+          <HeroVisual />
         </motion.div>
       </Container>
 
