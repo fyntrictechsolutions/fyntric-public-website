@@ -68,19 +68,20 @@ export const developmentProcess: Array<{ title: string; description: string }> =
   { title: "Support and optimization", description: "We monitor, support and keep improving the product after launch." },
 ];
 
-export const technologies = [
-  "Next.js",
-  "React",
-  "Flutter",
-  "Node.js",
-  "Python",
-  "PHP",
-  "PostgreSQL",
-  "MySQL",
-  "MongoDB",
-  "AWS",
-  "Shopify",
-  "WooCommerce",
+/** Logos live in /public/logos/tech (see the README there for sources). */
+export const technologies: Array<{ name: string; logo: string }> = [
+  { name: "Next.js", logo: "/logos/tech/nextjs.svg" },
+  { name: "React", logo: "/logos/tech/react.svg" },
+  { name: "Flutter", logo: "/logos/tech/flutter.svg" },
+  { name: "Node.js", logo: "/logos/tech/nodejs.svg" },
+  { name: "Python", logo: "/logos/tech/python.svg" },
+  { name: "PHP", logo: "/logos/tech/php.svg" },
+  { name: "PostgreSQL", logo: "/logos/tech/postgresql.svg" },
+  { name: "MySQL", logo: "/logos/tech/mysql.svg" },
+  { name: "MongoDB", logo: "/logos/tech/mongodb.svg" },
+  { name: "AWS", logo: "/logos/tech/amazonwebservices.svg" },
+  { name: "Shopify", logo: "/logos/tech/shopify.svg" },
+  { name: "WooCommerce", logo: "/logos/tech/woocommerce.svg" },
 ];
 
 export const industries: IconItem[] = [
