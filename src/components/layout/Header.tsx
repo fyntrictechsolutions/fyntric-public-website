@@ -20,6 +20,9 @@ function isActive(pathname: string, href: string) {
 /** Sticky header: transparent over the hero, glass once scrolled, hides while scrolling down. */
 export function Header() {
   const pathname = usePathname();
+  if (pathname?.startsWith("/crm-landing")) {
+    return null;
+  }
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);

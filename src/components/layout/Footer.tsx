@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/layout/Logo";
 import { Container } from "@/components/ui/Container";
@@ -19,6 +22,10 @@ const footerServices = services.filter((service) =>
 );
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/crm-landing")) {
+    return null;
+  }
   const year = new Date().getFullYear();
 
   return (

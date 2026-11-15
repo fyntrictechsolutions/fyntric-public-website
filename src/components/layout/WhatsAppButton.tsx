@@ -1,7 +1,15 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 /** Floating quick-chat button, bottom right on every page. */
 export function WhatsAppButton() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/crm-landing")) {
+    return null;
+  }
+
   return (
     <a
       href={buildWhatsAppUrl("Hi Fyntric Tech, I'd like to discuss a project.")}
