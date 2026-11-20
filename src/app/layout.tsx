@@ -1,9 +1,6 @@
+
 import type { Metadata, Viewport } from "next";
 import { Inter, Sora } from "next/font/google";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { ScrollProgress } from "@/components/layout/ScrollProgress";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { contactConfig, siteConfig } from "@/config/site";
@@ -12,8 +9,17 @@ import { ogImage } from "@/lib/metadata";
 import { DEFAULT_THEME, themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
-const inter = Inter({ variable: "--font-inter", subsets: ["latin"], display: "swap" });
-const sora = Sora({ variable: "--font-sora", subsets: ["latin"], display: "swap" });
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${siteConfig.url}/`),
@@ -42,8 +48,14 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     images: [ogImage],
   },
-  twitter: { card: "summary_large_image", images: [ogImage.url] },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    images: [ogImage.url],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export const viewport: Viewport = {
@@ -84,26 +96,27 @@ const websiteSchema = {
   url: siteConfig.url,
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="en" data-theme={DEFAULT_THEME} className={`${inter.variable} ${sora.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      data-theme={DEFAULT_THEME}
+      className={`${inter.variable} ${sora.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
+
       <body className="min-h-dvh">
         <SmoothScroll>
-          <a
-            href="#main"
-            className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[70] focus:rounded-full focus:bg-brand-500 focus:px-4 focus:py-2 focus:text-white"
-          >
-            Skip to content
-          </a>
-          <ScrollProgress />
-          <Header />
-          <main id="main">{children}</main>
-          <Footer />
-          <WhatsAppButton />
+          {children}
         </SmoothScroll>
+
         <JsonLd data={organizationSchema} />
         <JsonLd data={websiteSchema} />
       </body>

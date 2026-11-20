@@ -90,6 +90,24 @@
   --color-accent-cyan: #2ee6ff;
   --color-accent-violet: #8b6cff;
 
+  --color-crm-green: #1677ff;
+  --color-crm-green-dark: #0a5fe0;
+  --color-crm-green-deep: #0b1033;
+  --color-crm-green-light: #3f8dff;
+  --color-crm-green-mint: #2ee6ff;
+  --color-crm-green-soft: #eaf3ff;
+  --color-crm-green-border: #d2e5ff;
+  --color-crm-dark: #070a2b;
+  --color-crm-charcoal: #0b1033;
+  --color-crm-slate: #2b3552;
+  --color-crm-bg: #f3f6fb;
+  --color-crm-warm: #e9eef8;
+  --color-crm-card: #ffffff;
+  --color-crm-border: #d2e5ff;
+  --color-crm-subtle: #eaf3ff;
+  --color-crm-muted: #475273;
+  --color-crm-accent: #2ee6ff;
+
   --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
   --animate-float: float 8s ease-in-out infinite;
   --animate-spin-slow: spin 40s linear infinite;
@@ -385,3 +403,44 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ========================================================
+ * CRM Landing Page Dedicated Styling (Matches Original Design)
+ * ======================================================== */
+.bg-crm-bg { background-color: #F3F6FB !important; }
+.bg-crm-green { background-color: #1677FF !important; }
+.bg-crm-green-dark { background-color: #0A5FE0 !important; }
+.bg-crm-green-soft { background-color: #EAF3FF !important; }
+.bg-crm-green-deep { background-color: #0B1033 !important; }
+.bg-crm-green-light { background-color: #3F8DFF !important; }
+.bg-crm-subtle { background-color: #EAF3FF !important; }
+.bg-crm-warm { background-color: #E9EEF8 !important; }
+.bg-crm-dark { background-color: #070A2B !important; }
+.bg-crm-charcoal { background-color: #0B1033 !important; }
+.bg-crm-card { background-color: #FFFFFF !important; }
+
+.text-crm-green { color: #1677FF !important; }
+.text-crm-green-dark { color: #0A5FE0 !important; }
+.text-crm-green-light { color: #3F8DFF !important; }
+.text-crm-charcoal { color: #0B1033 !important; }
+.text-crm-slate { color: #2B3552 !important; }
+.text-crm-muted { color: #475273 !important; }
+.text-crm-accent { color: #2EE6FF !important; }
+
+.border-crm-green { border-color: #1677FF !important; }
+.border-crm-green-border { border-color: #D2E5FF !important; }
+.border-crm-border { border-color: #D2E5FF !important; }
+.border-crm-subtle { border-color: #EAF3FF !important; }
+
+.hover\:bg-crm-green-dark:hover { background-color: #0A5FE0 !important; }
+.hover\:bg-crm-green-soft:hover { background-color: #EAF3FF !important; }
+.hover\:bg-crm-green-light:hover { background-color: #3F8DFF !important; }
+.hover\:text-crm-green:hover { color: #1677FF !important; }
+.hover\:text-crm-green-dark:hover { color: #0A5FE0 !important; }
+.hover\:text-crm-charcoal:hover { color: #0B1033 !important; }
+.hover\:border-crm-green\/40:hover { border-color: rgba(22, 119, 255, 0.4) !important; }
+.hover\:border-crm-green\/50:hover { border-color: rgba(22, 119, 255, 0.5) !important; }
+
+.decoration-crm-green\/30 { text-decoration-color: rgba(22, 119, 255, 0.3) !important; }
+.shadow-crm-green\/20 { box-shadow: 0 4px 14px rgba(22, 119, 255, 0.2) !important; }
+.shadow-crm-green\/30 { box-shadow: 0 4px 20px rgba(22, 119, 255, 0.3) !important; }
