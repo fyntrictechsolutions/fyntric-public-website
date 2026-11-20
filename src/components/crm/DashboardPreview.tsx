@@ -289,7 +289,7 @@ export default function DashboardPreview({
                           WhatsApp
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-crm-slate italic">"Hi"</td>
+                      <td className="px-4 py-3 text-crm-slate italic">&ldquo;Hi&rdquo;</td>
                       <td className="px-4 py-3">
                         <span className="bg-red-50 text-red-600 font-bold px-2 py-0.5 rounded text-[10px]">HOT</span>
                       </td>
@@ -309,7 +309,7 @@ export default function DashboardPreview({
                           Instagram DM
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-crm-slate italic">"Price details for Creta?"</td>
+                      <td className="px-4 py-3 text-crm-slate italic">&ldquo;Price details for Creta?&rdquo;</td>
                       <td className="px-4 py-3">
                         <span className="bg-amber-50 text-amber-700 font-bold px-2 py-0.5 rounded text-[10px]">WARM</span>
                       </td>
@@ -329,7 +329,7 @@ export default function DashboardPreview({
                           Meta Lead Ad
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-crm-slate italic">"Hi, I am interested in Fortuner"</td>
+                      <td className="px-4 py-3 text-crm-slate italic">&ldquo;Hi, I am interested in Fortuner&rdquo;</td>
                       <td className="px-4 py-3">
                         <span className="bg-red-50 text-red-600 font-bold px-2 py-0.5 rounded text-[10px]">HOT</span>
                       </td>
@@ -448,7 +448,7 @@ export default function DashboardPreview({
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white p-5 rounded-2xl border border-crm-border shadow-sm">
                   <h4 className="text-sm font-bold text-crm-charcoal mb-3 flex items-center justify-between">
-                    <span>Today's Follow-up Schedule</span>
+                    <span>Today&apos;s Follow-up Schedule</span>
                     <span className="text-xs text-crm-green font-semibold">24h & 48h SLA</span>
                   </h4>
 
