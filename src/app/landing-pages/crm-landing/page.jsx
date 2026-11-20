@@ -14,7 +14,11 @@ import MobileFloatingCta from "@/components/crm/MobileFloatingCta";
 import LeadModal from "@/components/crm/LeadModal";
 
 export default function CrmLandingPage() {
-  const [demoModalOpen, setDemoModalOpen] = useState(false);
+const [demoModalOpen, setDemoModalOpen] = useState(false);
+const [name, setName] = useState("");
+const [message, setMessage] = useState(
+  "I am interested in your CRM solution. I wish to know more about it."
+);
 
   const handleOpenDemo = () => {
     setDemoModalOpen(true);
@@ -54,8 +58,14 @@ export default function CrmLandingPage() {
         {/* FAQs */}
         <FaqSection />
 
-        {/* High-urgency Final Call to Action */}
-        <FinalCta onOpenDemoModal={handleOpenDemo} />
+    {/* High-urgency Final Call to Action */}
+<FinalCta
+  onOpenDemoModal={handleOpenDemo}
+  name={name}
+  setName={setName}
+  message={message}
+  setMessage={setMessage}
+/>  
       </main>
 
       {/* Sticky Bottom Floating Bar for Mobile Visitors */}
